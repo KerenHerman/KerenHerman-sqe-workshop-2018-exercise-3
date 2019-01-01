@@ -21,10 +21,10 @@ function makeDot(cfg, codeToParse) {
     newCfg[1] = cfg[cfg.length - 1];
     newCfg[2] = cfg;
     let dot = newDot(newCfg, codeToParse);
-    var sample = 'digraph{' + dot + '}';
+    var finalDot = 'digraph{' + dot + '}';
     var svg = new Viz({Module, render});
     var graph = document.getElementById('parsedCode');
-    svg.renderSVGElement(sample).then(function (element) {
+    svg.renderSVGElement(finalDot).then(function (element) {
         graph.innerHTML = '';
         graph.append(element);
     });
